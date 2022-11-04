@@ -1,0 +1,8 @@
+//this can mostly be ignored...just for Kaitlyn's Use
+
+fuser -k 5000/tcp
+fuser -k 8000/tcp
+python3 initializeSQL.py
+python3 -m flask run --host=127.0.0.1 --port=8000 &
+disown -h %1
+disown -h %2

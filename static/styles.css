@@ -1,0 +1,32 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .black
+{
+    color: black;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+a:-webkit-any-link {
+    text-decoration: none !important;
+    color: black;
+}
+
+.metadata p{
+    text-align: left !important;
+}

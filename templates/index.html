@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Analyzing Joe Biden Approval Rating in Relation to Tweets
+{% endblock %}
+
+{% block main %}
+<div class="mt-4 p-5 bg-light text-black rounded">
+    <h2>Our Project</h2>
+    <div class="container">
+        <p>
+            Born out of a project for a Yale University course on digital humanities, this website is designed as a user-friendly platform to explore some of the inscriptions found at the Dura-Europos site. All graffiti on the website were included in the second preliminary report from the Excavations at Dura Europos, an as-of-yet un-digitized archaeological report of findings from the Yale-French excavations at the sight from 1928-29. We’ve pulled graffiti from two sites within the city: those inside the walls of Tower 1, next to the Temple of the Palmyrene Gods, and from the Main Gate, also known as the Palmyrene Gate, to the city. We generally term the texts discussed on this website as “graffiti,” meaning words or pictures inscribed not in an official capacity and in public view, although we also freely call them “inscriptions.” This project is restricted to textual graffiti and graffiti in the Greek alphabet (the majority of the graffiti which is present at the Tower and Gate), so all drawings and inscriptions in other languages from Greek are not included. All translations were done by Grace Blaxill, an undergraduate at Yale and Jamie Flynn, a masters student in the History track at Yale. All website design and coding was performed by Kaitlyn Sandor, Lee Chen, and Jakub Bester, undergraduate students at Yale University.
+        </p>      
+    </div>
+</div>
+
+<div class="mt-4 p-5 bg-light text-black rounded">
+    <div class="container">
+        <h2>Analyze the Data</h2>
+        <div class="container">
+        <p> 
+            Hover over a labelled graffito on either of the architectural drawings provided, Tower or Gate. Follow the link to see a page which will include a transcription and translation of the graffito as well as accompanying metadata as available (Period, Letter Height, Notes, etc.). If available, a picture of the text will be included.
+        </p>
+      </div>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <a href="/"><h3>Submit a Query</h3></a>
+            </div>
+            <div class="col">
+                <a href="/"><h3>Key Insights</h3></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
