@@ -4,8 +4,8 @@ import datetime
 import re
 
 # convert to dataframes
-biden_tweets_df = pd.read_csv('data_cleaning/JoeBidenTweets.csv')
-polling_df = pd.read_csv('data_cleaning/polling_data.csv')
+biden_tweets_df = pd.read_csv('JoeBidenTweets.csv')
+polling_df = pd.read_csv('polling_data.csv')
 
 # drop unnecessary columns
 biden_tweets_df = biden_tweets_df.drop(['url'], axis = 1)
