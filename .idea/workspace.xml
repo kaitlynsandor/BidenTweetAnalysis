@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dada79c3-58eb-446e-9189-3075712c1f1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/insights.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initializeSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/initializeSQL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/cloud.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insights.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insights.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,41 +44,42 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="README" value="802" />
-          <entry key="html" value="277" />
-          <entry key="py" value="716" />
+          <entry key="html" value="342" />
+          <entry key="py" value="790" />
           <entry key="script" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="277" />
+          <entry key="HTML" value="342" />
           <entry key="PLAIN_TEXT" value="860" />
-          <entry key="Python" value="716" />
+          <entry key="Python" value="790" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
+            <state relative-caret-position="259">
+              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
               <folding>
-                <marker date="1667873630491" expanded="true" signature="1352:1353" ph="..." />
-                <marker date="1667873630491" expanded="true" signature="1385:1390" ph="..." />
-                <marker date="1667873630491" expanded="true" signature="1385:2280" ph="..." />
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1667873836092" expanded="true" signature="1354:1355" ph="..." />
+                <marker date="1667873836092" expanded="true" signature="1387:1392" ph="..." />
+                <marker date="1667873836092" expanded="true" signature="1387:2349" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/insights.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -184,8 +181,8 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/initializeSQL.py" />
-        <option value="$PROJECT_DIR$/templates/insights.html" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/insights.html" />
       </list>
     </option>
   </component>
@@ -211,17 +208,6 @@
               <item name="BidenTweetAnalysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="BidenTweetAnalysis" type="462c0819:PsiDirectoryNode" />
               <item name="data_cleaning" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BidenTweetAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BidenTweetAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BidenTweetAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BidenTweetAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BidenTweetAnalysis" type="b2602c69:ProjectViewProjectNode" />
@@ -360,22 +346,23 @@
     <entry file="file://$PROJECT_DIR$/static/images/cloud.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/insights.html">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="259">
+          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1667873836092" expanded="true" signature="1354:1355" ph="..." />
+            <marker date="1667873836092" expanded="true" signature="1387:1392" ph="..." />
+            <marker date="1667873836092" expanded="true" signature="1387:2349" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/templates/insights.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-          <folding>
-            <marker date="1667873630491" expanded="true" signature="1352:1353" ph="..." />
-            <marker date="1667873630491" expanded="true" signature="1385:1390" ph="..." />
-            <marker date="1667873630491" expanded="true" signature="1385:2280" ph="..." />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
         </state>
       </provider>
     </entry>

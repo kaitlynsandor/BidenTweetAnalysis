@@ -52,14 +52,13 @@ def get_topic_frequency(tweets):
     word_freq.most_common(30)
 
     # retrieve word and count from FreqDist tuples
-
     most_common_count = [x[1] for x in word_freq.most_common(30)]
     most_common_word = [x[0] for x in word_freq.most_common(30)]
 
     # create dictionary mapping of word count
     top_30_dictionary = dict(zip(most_common_word, most_common_count))
 
-    # Create Word Cloud of top 30 words
+    # Create Word Cloud of top 30 words..need to figure out best number of topics to generate given a tweet
     wordcloud = WordCloud(colormap='Accent', background_color='black') \
         .generate_from_frequencies(top_30_dictionary)
 
