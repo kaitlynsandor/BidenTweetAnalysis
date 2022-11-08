@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Analyzing Joe Biden Approval Rating in Relation to Tweets
+{% endblock %}
+
+{% block main %}
+
+<div class="mt-4 p-5 bg-light text-black rounded">
+    <h2>Our Project</h2>
+    <div class="container">
+        <p>
+            Submit a query to run on our database!
+        </p>      
+    </div>
+</div>
+
+<form action="/data" method = "POST">
+    <p>Name <input type = "text" name = "Name" /></p>
+    <p>Give your query a name <input type = "text" name = "Give your query a name" /></p>
+    <p>Your Query <input type = "text" name = "Your Query" /></p>
+    <p><input type = "submit" value = "Submit" /></p>
+</form>
+
+
+{% endblock %}

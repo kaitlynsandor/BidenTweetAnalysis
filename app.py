@@ -68,6 +68,34 @@ def get_topic_frequency(tweets, img_name):
     plt.tight_layout(pad=0)
     plt.savefig('./static/images/' + img_name + '.png')
 
+
+
+@app.route('/submitquery')
+def form():
+    return render_template('submitquery.html')
+ 
+@app.route('/data/', methods = ['POST', 'GET'])
+def data():
+    if request.method == 'GET':
+        return f"The URL /data is accessed directly. Try going to '/form' to submit form"
+    if request.method == 'POST':
+        form_data = request.form
+        query = str(request.form.get("Your Query"))
+        print(query)
+
+        try:
+            con = sqlite3.connect("database.db")
+            cursor_object = con.cursor()
+            result = cursor_object.execute(query)
+
+        except:
+            result = "error with query"
+        
+        return render_template('data.html',form_data = form_data, result = result)
+
+
+
+
 if __name__=="__main__":
     matplotlib.use('Agg')
     app.run(host=os.getenv('IP', '0.0.0.0'),
