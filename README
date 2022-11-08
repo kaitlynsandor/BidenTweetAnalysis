@@ -1,13 +1,19 @@
-Download the and unzip the Zip file
-then run "bash script"
+Tasks:
 
-script should start Flask application on 127.0.0.1:8000 with our Contextualizing Graffiti in Dura website
-
-Alternatively you can run
-python3 initializeSQL.py
-python3 -m flask run --host=127.0.0.1 --port=8000
-
-alternatively, you can view the site at: www.duragraffiti.tk
-
-A link to our github where you can see our individual contributions can be found here:
-https://github.com/leeannachen/Contextualizing-Dura-Europa
+1. Submit a Query -- Madelyn
+    make sure it won't break the table
+    check valid input --> correct SQL query
+    find way to display results on the fly
+2. Key Insights Tab --> Generate Graphs/Interesting Output
+    compare after midterm elections too
+    Reads the tweets from the time range --> output of the SQL
+    Topic Modeling  --> generate most talked about topics --> Kaitlyn
+    show how often people tweet about him
+4. Clean CSV Data --> Zoe
+    Make all dates in both tables line up (same format)
+    remove links and special characters
+    * decide how we want the tables to connect *
+5. Send me short bio and picture of yourself that is 1000 px X 1000 px
+// 6. Moving this to AWS --> Kaitlyn
+// https://medium.com/@osas.usen/topic-extraction-from-tweets-using-lda-a997e4eb0985
+// https://towardsdatascience.com/lda-topic-modeling-with-tweets-deff37c0e131
