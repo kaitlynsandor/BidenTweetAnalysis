@@ -70,9 +70,9 @@ def get_topic_frequency(tweets, img_name):
 
 
 
-@app.route('/submitquery')
+@app.route('/submitqueries')
 def form():
-    return render_template('submitquery.html')
+    return render_template('submitqueries.html')
  
 @app.route('/data/', methods = ['POST', 'GET'])
 def data():
@@ -92,9 +92,6 @@ def data():
             result = "error with query"
         
         return render_template('data.html',form_data = form_data, result = result)
-
-
-
 
 if __name__=="__main__":
     matplotlib.use('Agg')

@@ -1,10 +1,23 @@
-{% for key,value in form_data.items() %}
-<h2> {{key}}</h2>
-<p> {{value}}</p>
+{% extends "layout.html" %}
 
-{% endfor %}
+{% block title %}
+    Analyzing Joe Biden Approval Rating in Relation to Tweets
+{% endblock %}
+{% block main %}
+<div class="mt-4 p-5 bg-light text-black rounded">
+    <div class="container">
+        {% for key,value in form_data.items() %}
+    <h2> {{key}}</h2>
+    <p> {{value}}</p>
 
-<h2>This is the result of your query</h2>
+    {% endfor %}
 
-<p> {{result}}</p>
+    <h2>This is the result of your query</h2>
+
+    <p> {{result}}</p>
+    </div>
+</div>
+{% endblock %}
+
+
 
