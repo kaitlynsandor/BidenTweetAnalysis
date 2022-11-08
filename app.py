@@ -1,11 +1,8 @@
 import os
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
-from nltk.probability import FreqDist
-from wordcloud import WordCloud
 import matplotlib
-import requests
-import matplotlib.pyplot as plt
+from word_cloud import *
 
 # Configure application
 app = Flask(__name__)
@@ -32,43 +29,13 @@ def index():
 
 @app.route("/insights", methods=["GET", "POST"])
 def insights():
-    response = requests.get(
-        'https://www.mit.edu/~ecprice/wordlist.10000',
-        timeout=10)
-    string_of_words = response.content.decode('utf-8')
-    list_of_words = string_of_words.splitlines()
-    get_topic_frequency(list_of_words[0:100], 'cloud')
+    list_of_words = get_test_words()
+    create_save_word_cloud_from_dirty_tweets(list_of_words, 'cloud')
     return render_template('insights.html')
 
 @app.route("/about",  methods=["GET", "POST"])
 def about():
     return render_template('about.html')
-
-def get_topic_frequency(tweets, img_name):
-    # iterate through each tweet, then each token in each tweet, and store in one list
-    # flat_words = [item for sublist in tweets for item in sublist]
-    word_freq = FreqDist(tweets)
-    word_freq.most_common(30)
-
-    # retrieve word and count from FreqDist tuples
-    most_common_count = [x[1] for x in word_freq.most_common(30)]
-    most_common_word = [x[0] for x in word_freq.most_common(30)]
-
-    # create dictionary mapping of word count
-    top_30_dictionary = dict(zip(most_common_word, most_common_count))
-
-    # Create Word Cloud of top 30 words..need to figure out best number of topics to generate given a tweet
-    wordcloud = WordCloud(colormap='Accent', background_color='black') \
-        .generate_from_frequencies(top_30_dictionary)
-
-    # plot with matplotlib
-    plt.figure(figsize=(12, 8))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    plt.tight_layout(pad=0)
-    plt.savefig('./static/images/' + img_name + '.png')
-
-
 
 @app.route('/submitqueries')
 def form():
