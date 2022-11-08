@@ -38,14 +38,14 @@ def insights():
         timeout=10)
     string_of_words = response.content.decode('utf-8')
     list_of_words = string_of_words.splitlines()
-    get_topic_frequency(list_of_words[0:100])
+    get_topic_frequency(list_of_words[0:100], 'cloud')
     return render_template('insights.html')
 
 @app.route("/about",  methods=["GET", "POST"])
 def about():
     return render_template('about.html')
 
-def get_topic_frequency(tweets):
+def get_topic_frequency(tweets, img_name):
     # iterate through each tweet, then each token in each tweet, and store in one list
     # flat_words = [item for sublist in tweets for item in sublist]
     word_freq = FreqDist(tweets)
@@ -67,7 +67,7 @@ def get_topic_frequency(tweets):
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     plt.tight_layout(pad=0)
-    plt.savefig('./static/images/cloud.png')
+    plt.savefig('./static/images/' + img_name + '.png')
 
 if __name__=="__main__":
     matplotlib.use('Agg')
