@@ -3,7 +3,9 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from nltk.probability import FreqDist
 from wordcloud import WordCloud
-import matplotlib as plt
+import matplotlib
+import requests
+import matplotlib.pyplot as plt
 
 # Configure application
 app = Flask(__name__)
@@ -29,14 +31,24 @@ def after_request(response):
 def index():
     return render_template('index.html')
 
+@app.route("/insights", methods=["GET", "POST"])
+def insights():
+    response = requests.get(
+        'https://www.mit.edu/~ecprice/wordlist.10000',
+        timeout=10)
+    string_of_words = response.content.decode('utf-8')
+    list_of_words = string_of_words.splitlines()
+    get_topic_frequency(list_of_words[0:100])
+    return render_template('insights.html')
+
 @app.route("/about",  methods=["GET", "POST"])
 def about():
     return render_template('about.html')
 
 def get_topic_frequency(tweets):
     # iterate through each tweet, then each token in each tweet, and store in one list
-    flat_words = [item for sublist in tweets for item in sublist]
-    word_freq = FreqDist(flat_words)
+    # flat_words = [item for sublist in tweets for item in sublist]
+    word_freq = FreqDist(tweets)
     word_freq.most_common(30)
 
     # retrieve word and count from FreqDist tuples
@@ -56,10 +68,9 @@ def get_topic_frequency(tweets):
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     plt.tight_layout(pad=0)
-    plt.savefig('top_30_cloud.png')
-    plt.show()
-
+    plt.savefig('./static/images/cloud.png')
 
 if __name__=="__main__":
+    matplotlib.use('Agg')
     app.run(host=os.getenv('IP', '0.0.0.0'),
             port=int(os.getenv('PORT', 8000)))

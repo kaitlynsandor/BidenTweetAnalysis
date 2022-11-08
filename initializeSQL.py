@@ -1,7 +1,6 @@
 import pandas as pd
 import sqlite3
 
-
 # sameple code to read in csv to database once we get to this stage...this code only needs to be run once
 with open('tweets.csv', 'r') as f:
     con = sqlite3.connect("data.db")
