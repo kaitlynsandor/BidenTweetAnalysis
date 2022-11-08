@@ -1,5 +1,4 @@
 Tasks:
-
 1. Submit a Query -- Madelyn
     make sure it won't break the table
     check valid input --> correct SQL query
@@ -14,9 +13,9 @@ Tasks:
     remove links and special characters
     * decide how we want the tables to connect *
 5. Send me short bio and picture of yourself that is 1000 px X 1000 px
-// 6. Moving this to AWS --> Kaitlyn
+6. Create content for homepage, directions for submit a query page, and text for key insights page
 
-
+//Moving this to AWS? --> Kaitlyn
 // https://medium.com/@osas.usen/topic-extraction-from-tweets-using-lda-a997e4eb0985
 // https://towardsdatascience.com/lda-topic-modeling-with-tweets-deff37c0e131
 // https://stackoverflow.com/questions/50728328/python-how-to-show-matplotlib-in-flask
