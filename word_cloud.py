@@ -8,7 +8,7 @@ def get_test_words():
         'https://www.mit.edu/~ecprice/wordlist.10000',
         timeout=10)
     string_of_words = response.content.decode('utf-8')
-    string_of_words.splitlines()
+    return string_of_words.splitlines()
 
 def clean_tweets(tweets):
     pass
