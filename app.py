@@ -57,7 +57,7 @@ def data():
 
         except:
             result = "error with query"
-        
+
         return render_template('data.html',form_data = form_data, result = result)
 
 if __name__=="__main__":
