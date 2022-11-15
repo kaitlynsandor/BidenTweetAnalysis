@@ -1,7 +1,10 @@
+import sqlite3
 import matplotlib.pyplot as plt
 from nltk.probability import FreqDist
 from wordcloud import WordCloud
 import requests
+from nltk.corpus import stopwords
+import string
 
 def get_test_words():
     response = requests.get(
@@ -10,17 +13,36 @@ def get_test_words():
     string_of_words = response.content.decode('utf-8')
     return string_of_words.splitlines()
 
-def clean_tweets(tweets):
-    pass
+def bad_word(word):
+    stop_words = stopwords.words("english")
+    if word not in stop_words:
+        return False
+    return True
+
+def get_tweets_date_range(start_date, end_date):
+    con = sqlite3.connect("data.db")
+    cursor_object = con.cursor()
+    query = "SELECT tweet FROM tweets WHERE timestamp BETWEEN " + "'" + start_date + "'" + " AND " + "'" + end_date + "'"
+    execution_result = cursor_object.execute(query)
+    tweets = []
+    for tweet in execution_result:
+        for word in tweet[0].split(' '):
+            word = word.lower()
+            new_word = word.translate(str.maketrans('', '', string.punctuation))
+            new_word = new_word.replace("’", '')
+            if len(word) > 1 and new_word == word and not bad_word(word):
+                tweets.append(word)
+    return tweets
 
 def get_num_topics(tweets):
     return 30
 
 def get_frequency_dict(tweets, topics):
-    # iterate through each tweet, then each token in each tweet, and store in one list
-    # flat_words = [item for sublist in tweets for item in sublist]
+    flat_words = []
+    for tweet in tweets:
+        flat_words.append(tweet)
 
-    word_freq = FreqDist(tweets)
+    word_freq = FreqDist(flat_words)
     word_freq.most_common(30)
 
     # retrieve word and count from FreqDist tuples
@@ -43,9 +65,7 @@ def generate_and_save_cloud(dictionary,
     plt.tight_layout(pad=0)
     plt.savefig('./static/images/' + img_name + '.png')
 
-
 def create_save_word_cloud_from_dirty_tweets(tweets, img_name):
     num_topics = get_num_topics(tweets)
-    clean_tweets(tweets)
     dictionary = get_frequency_dict(tweets, num_topics)
     generate_and_save_cloud(dictionary, img_name)

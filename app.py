@@ -5,6 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 import matplotlib
 from word_cloud import *
+from polling_data import *
 
 # Configure application
 app = Flask(__name__)
@@ -31,8 +32,10 @@ def index():
 
 @app.route("/insights", methods=["GET", "POST"])
 def insights():
-    list_of_words = get_test_words()
+    list_of_words = get_tweets_date_range('10/24/2007', '4/9/2012')
     create_save_word_cloud_from_dirty_tweets(list_of_words, 'cloud')
+    output = get_dates_and_approval('1/19/2021', '1/21/2021')
+    graph_and_save_results(output[0], output[1], output[2], 'polling_data', "1/19/2021 --> 1/21/2021")
     return render_template('insights.html')
 
 @app.route("/about",  methods=["GET", "POST"])
@@ -56,13 +59,13 @@ def data():
             con = sqlite3.connect("data.db")
             cursor_object = con.cursor()
 
-            #result = cursor_object.execute(query)
-            result1 = cursor_object.execute(query)
+            execution_result = cursor_object.execute(query)
             result = []
-            for i in result1:
+
+            for i in execution_result:
                 result.append(i)
-                
-                
+
+            # get structure of output, print out an output table
 
         except:
             result = "error with query"
