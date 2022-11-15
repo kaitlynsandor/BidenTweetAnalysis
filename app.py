@@ -1,4 +1,6 @@
 import os
+import sqlite3
+
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 import matplotlib
@@ -51,7 +53,7 @@ def data():
         print(query)
 
         try:
-            con = sqlite3.connect("database.db")
+            con = sqlite3.connect("data.db")
             cursor_object = con.cursor()
             result = cursor_object.execute(query)
 

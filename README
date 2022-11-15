@@ -19,6 +19,7 @@ Tasks:
 // https://medium.com/@osas.usen/topic-extraction-from-tweets-using-lda-a997e4eb0985
 // https://towardsdatascience.com/lda-topic-modeling-with-tweets-deff37c0e131
 // https://stackoverflow.com/questions/50728328/python-how-to-show-matplotlib-in-flask
+// database viewer: https://inloop.github.io/sqlite-viewer/
 
 ## Launch Codes:
 1. Clone this repository: `git clone https://github.com/kaitlynsandor/BidenTweetAnalysis.git`
