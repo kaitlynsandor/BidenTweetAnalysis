@@ -55,7 +55,14 @@ def data():
         try:
             con = sqlite3.connect("data.db")
             cursor_object = con.cursor()
-            result = cursor_object.execute(query)
+
+            #result = cursor_object.execute(query)
+            result1 = cursor_object.execute(query)
+            result = []
+            for i in result1:
+                result.append(i)
+                
+                
 
         except:
             result = "error with query"

@@ -14,7 +14,14 @@
 
     <h2>This is the result of your query</h2>
 
-    <p> {{result}}</p>
+
+    <ul>
+        {% for results in result %}
+            <p>{{results}}</p>
+        {% endfor %}
+    </ul>
+
+
     </div>
 </div>
 {% endblock %}
