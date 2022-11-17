@@ -7,7 +7,7 @@
 {% block main %}
 <h2>Our Project</h2> <br>
     <div class="container">
-        <h3>How Our Code Works:</h3>
+        <h3>How Our Code Works</h3>
         <p>
             First, as an insight to how our website works, I included a demo on the most popular tweet subject from 11/24/2021 to 12/21/2021 in relation to Joe Biden's
             approval and disapproval rating. We first cleaned the data from the two Kaggle tables. We then made sure the dates of the tweets lined up with the dates of
@@ -15,13 +15,13 @@
             Once we had the tweets, the stop words were removed from the tweets to just leave the subjects. Because were were multiple disapproval ratings and approval ratings for each day (due to different sources conducting surveys) we chose to
             average the ratings for each day to display on the line chart.
         </p> <br>
-        <h3>Analysis:</h3>
+        <h3>Analysis</h3>
         <p>
             As you can see, "build" and "better" were some of the most common subjects of his tweets.
             This makes sense when considering this was the time the Biden administration was pushing for the Build Back Better Plan. Additionally, you can see his approval rating plummet and disapproval rating increase in December of 2021. This
             makes sense as it lines up with the first record growth of inflation article published by the NYT, which was obviously upsetting to American citizens.
         </p> <br>
-        <h3>SQL Queries:</h3>
+        <h3>SQL Queries</h3>
         <p>
             SELECT startdate, approve, disapprove FROM polling_data WHERE startdate BETWEEN '11/24/2021' AND '12/21/2021' <br>
             SELECT tweet_content FROM tweets WHERE tweet_date BETWEEN '11/24/2021' AND '12/21/2021'
