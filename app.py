@@ -6,7 +6,7 @@ from flask_session import Session
 import matplotlib
 from word_cloud import *
 from polling_data import *
-
+sw_spacy = []
 # Configure application
 app = Flask(__name__)
 
@@ -32,10 +32,10 @@ def index():
 
 @app.route("/insights", methods=["GET", "POST"])
 def insights():
-    list_of_words = get_tweets_date_range('10/24/2007', '4/9/2012')
+    list_of_words = get_tweets_date_range('11/24/2021', '12/21/2021', sw_spacy)
     create_save_word_cloud_from_dirty_tweets(list_of_words, 'cloud')
-    output = get_dates_and_approval('1/19/2021', '1/21/2021')
-    graph_and_save_results(output[0], output[1], output[2], 'polling_data', "1/19/2021 --> 1/21/2021")
+    output = get_dates_and_approval('11/24/2021', '12/21/2021')
+    graph_and_save_results(output[0], output[1], output[2], 'polling_data', "11/24/2021 --> 12/21/2021")
     return render_template('insights.html')
 
 @app.route("/about",  methods=["GET", "POST"])
@@ -74,5 +74,7 @@ def data():
 
 if __name__=="__main__":
     matplotlib.use('Agg')
+    en = spacy.load('en_core_web_sm')
+    sw_spacy = en.Defaults.stop_words
     app.run(host=os.getenv('IP', '0.0.0.0'),
             port=int(os.getenv('PORT', 8000)))

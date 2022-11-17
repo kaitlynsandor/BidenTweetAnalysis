@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="dada79c3-58eb-446e-9189-3075712c1f1c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polling_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/polling_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/cloud.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/polling_data.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/polling_data.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insights.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insights.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/submitqueries.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/submitqueries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/word_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/word_cloud.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,12 +93,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/kaitlynsandor/Desktop/CPSC 437/BidenTweetAnalysis"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kaitlynsandor/Desktop/CPSC 437/BidenTweetAnalysis&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="BidenTweetAnalysis" is-module-sdk="true">
@@ -118,7 +125,8 @@
       <option name="presentableId" value="Default" />
       <updated>1667580595696</updated>
       <workItem from="1667931470271" duration="284000" />
-      <workItem from="1668481261704" duration="10839000" />
+      <workItem from="1668481261704" duration="12675000" />
+      <workItem from="1668705866335" duration="3027000" />
     </task>
     <servers />
   </component>

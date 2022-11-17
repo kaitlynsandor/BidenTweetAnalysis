@@ -1,6 +1,9 @@
 import sqlite3
-
+import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
+import datetime as dt
+import numpy as np
+import matplotlib.ticker as mticker
 
 def get_dates_and_approval(first_date=None, second_date=None):
     con = sqlite3.connect("data.db")
@@ -37,18 +40,21 @@ def graph_and_save_results(dates, approval_ratings, disapproval_ratings, img_nam
     plt.xlabel('Days')
     plt.ylabel('Rating % (Green Approval/Red Disapproval)')
 
+    myLocator = mticker.MultipleLocator(4)
+    ax.xaxis.set_major_locator(myLocator)
+
     if approval_ratings:
         x_axis = dates
         y_axis = approval_ratings
         plt.plot(x_axis, y_axis, linestyle='--', marker='o', color='g', label='average approval rating/day with marker')
         for index in range(len(x_axis)):
-            ax.text(x_axis[index], y_axis[index], y_axis[index], size=12)
+            ax.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=12)
 
     if disapproval_ratings:
         x_axis = dates
         y_axis = disapproval_ratings
         plt.plot(x_axis, y_axis, linestyle='--', marker='o', color='r', label='average approval rating/day with marker')
         for index in range(len(x_axis)):
-            ax.text(x_axis[index], y_axis[index], y_axis[index], size=12)
+            ax.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=12)
 
     plt.savefig('./static/images/' + img_name + '.png')

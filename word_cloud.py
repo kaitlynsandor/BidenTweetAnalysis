@@ -5,6 +5,7 @@ from wordcloud import WordCloud
 import requests
 from nltk.corpus import stopwords
 import string
+import spacy
 
 def get_test_words():
     response = requests.get(
@@ -13,24 +14,24 @@ def get_test_words():
     string_of_words = response.content.decode('utf-8')
     return string_of_words.splitlines()
 
-def bad_word(word):
+def bad_word(word, sw_spacy):
     stop_words = stopwords.words("english")
-    if word not in stop_words:
+    if word not in stop_words and word not in sw_spacy:
         return False
     return True
 
-def get_tweets_date_range(start_date, end_date):
+def get_tweets_date_range(start_date, end_date, sw_spacy):
     con = sqlite3.connect("data.db")
     cursor_object = con.cursor()
-    query = "SELECT tweet FROM tweets WHERE timestamp BETWEEN " + "'" + start_date + "'" + " AND " + "'" + end_date + "'"
+    query = "SELECT tweet_content FROM tweets WHERE tweet_date BETWEEN " + "'" + start_date + "'" + " AND " + "'" + end_date + "'"
     execution_result = cursor_object.execute(query)
     tweets = []
     for tweet in execution_result:
         for word in tweet[0].split(' '):
             word = word.lower()
             new_word = word.translate(str.maketrans('', '', string.punctuation))
-            new_word = new_word.replace("’", '')
-            if len(word) > 1 and new_word == word and not bad_word(word):
+            new_word2 = word.replace("’", '')
+            if len(word) > 1 and new_word == word and new_word2 == word and not bad_word(word, sw_spacy):
                 tweets.append(word)
     return tweets
 
