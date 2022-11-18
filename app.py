@@ -36,6 +36,7 @@ def insights():
     create_save_word_cloud_from_dirty_tweets(list_of_words, 'cloud')
     output = get_dates_and_approval('11/24/2021', '12/21/2021')
     graph_and_save_results(output[0], output[1], output[2], 'polling_data', "11/24/2021 --> 12/21/2021")
+    generate_complex_sql()
     return render_template('insights.html')
 
 @app.route("/about",  methods=["GET", "POST"])

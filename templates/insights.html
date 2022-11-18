@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-<h2>Our Project</h2> <br>
+<h2 xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml">Our Project</h2> <br>
     <div class="container">
         <h3>How Our Code Works</h3>
         <p>
@@ -31,6 +31,43 @@
         <img src="./static/images/cloud.png" alt="my plot" style="max-width: 40%">
 
         <img src="./static/images/polling_data.png" alt="my plot" style="max-width: 50%">
+
+        <br>
+        <h3>Complex SQL Query</h3>
+        <p> This is an example of a complex SQL query that gets the average number of likes Joe Biden got on his tweets a day with his average approval rating.
+            Below I included a graph of both his likes and approval ratings over time as a result of this query. The actual query is a little different in my code because SQL Lite 3 does not support FULL OUTER JOIN
+            but the sql queries are equivalent.
+        </p><br>
+        <div style="white-space: pre; text-align:left;"/>
+            SELECT DISTINCT startdate, average_tweet_likes, average_approve
+            FROM
+             (
+               (SELECT t1.tweet_date, t1.average_tweet_likes
+               FROM
+                 (SELECT tweet_date,AVG(Cast(tweet_like_count as Float)) as average_tweet_likes
+                    FROM tweets
+                    GROUP BY tweet_date
+                    HAVING COUNT(*) > 1) t1
+                    JOIN tweets t2 ON t1.tweet_date = t2.tweet_date) average_tweets
+               FULL OUTER JOIN
+                 (SELECT t3.startdate, t3.average_approve
+                 FROM
+                    (
+                      (SELECT startdate,AVG(Cast(approve as Float)) as average_approve
+                        FROM polling_data
+                        GROUP BY startdate
+                        HAVING COUNT(*) > 1) t3
+                    JOIN polling_data t4 ON t3.startdate=t4.startdate)
+                )
+                average_polls
+                ON average_polls.startdate=average_tweets.tweet_date
+             )
+             WHERE average_approve is not NULL
+             AND average_tweet_likes IS NOT NULL
+        </div>
+
+        <img src="./static/images/ratings.png" alt="my plot" style="max-width: 100%">
+<!--        <img src="./static/images/likes.png" alt="my plot" style="max-width: 50%">-->
 
     </div>
 {% endblock %}
