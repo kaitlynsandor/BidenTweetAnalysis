@@ -100,12 +100,12 @@ def generate_complex_sql():
 
     x_axis = dates
     y_axis = approval_ratings
-    ax.plot(x_axis, y_axis, linestyle='--', marker='o', color='g', label='average approval rating/day with marker')
+    ax.plot(x_axis, y_axis, linestyle='--', marker='o', color='blue', label='average approval rating/day with marker')
     for index in range(len(x_axis)):
         ax.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=9)
 
     y_axis = likes
-    ax2.plot(x_axis, y_axis, linestyle='--', marker='o', color='purple', label='average likes/day with marker')
+    ax2.plot(x_axis, y_axis, linestyle='--', marker='o', color='magenta', label='average likes/day with marker')
     for index in range(len(x_axis)):
         ax2.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=9)
 
