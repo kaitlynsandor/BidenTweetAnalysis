@@ -32,11 +32,10 @@
 
         <img src="./static/images/polling_data.png" alt="my plot" style="max-width: 50%">
 
-        <br>
+        <br><br>
         <h3>Complex SQL Query</h3>
         <p> This is an example of a complex SQL query that gets the average number of likes Joe Biden got on his tweets a day with his average approval rating.
-            Below I included a graph of both his likes and approval ratings over time as a result of this query. The actual query is a little different in my code because SQL Lite 3 does not support FULL OUTER JOIN
-            but the sql queries are equivalent.
+            Below I included a graph of both his likes and approval ratings over time as a result of this query.
         </p><br>
         <div style="white-space: pre; text-align:left;"/>
             SELECT DISTINCT startdate, average_tweet_likes, average_approve
@@ -49,7 +48,7 @@
                     GROUP BY tweet_date
                     HAVING COUNT(*) > 1) t1
                     JOIN tweets t2 ON t1.tweet_date = t2.tweet_date) average_tweets
-               FULL OUTER JOIN
+               LEFT JOIN
                  (SELECT t3.startdate, t3.average_approve
                  FROM
                     (

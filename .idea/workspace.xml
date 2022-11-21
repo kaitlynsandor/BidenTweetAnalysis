@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dada79c3-58eb-446e-9189-3075712c1f1c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polling_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/polling_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insights.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insights.html" afterDir="false" />
-    </list>
+    <list default="true" id="dada79c3-58eb-446e-9189-3075712c1f1c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +130,7 @@
       <workItem from="1668481261704" duration="12675000" />
       <workItem from="1668705866335" duration="4366000" />
       <workItem from="1668787635634" duration="3874000" />
-      <workItem from="1669059260924" duration="1088000" />
+      <workItem from="1669059260924" duration="1225000" />
     </task>
     <servers />
   </component>
