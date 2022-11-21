@@ -61,7 +61,7 @@ def generate_complex_sql():
     query = "SELECT DISTINCT startdate, average_tweet_likes, average_approve FROM((SELECT t1.tweet_date, t1.average_tweet_likes FROM (SELECT tweet_date,AVG(Cast(tweet_like_count as Float)) as average_tweet_likes FROM tweets GROUP BY tweet_date \
                     HAVING COUNT(*) > 1) t1 \
                     JOIN tweets t2 ON t1.tweet_date = t2.tweet_date) average_tweets \
-               FULL OUTER JOIN \
+               LEFT JOIN \
                  (SELECT t3.startdate, t3.average_approve \
                  FROM \
                     ( \
@@ -92,21 +92,22 @@ def generate_complex_sql():
     plt.title('Average Approval Rating and Average Likes/Tweet Over Time')
     plt.xlabel('Days')
     ax.set_ylabel('Average Rating %')
-    ax2.set_ylabel("Average likes/day")
+    ax2.set_ylabel("Average Likes/Day")
 
-    myLocator = mticker.MultipleLocator(4)
+    myLocator = mticker.MultipleLocator(5)
     ax.xaxis.set_major_locator(myLocator)
+    ax2.xaxis.set_major_locator(myLocator)
 
     x_axis = dates
     y_axis = approval_ratings
     ax.plot(x_axis, y_axis, linestyle='--', marker='o', color='g', label='average approval rating/day with marker')
     for index in range(len(x_axis)):
-        ax.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=12)
+        ax.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=9)
 
     y_axis = likes
-    ax2.plot(x_axis, y_axis, linestyle='--', marker='o', color='b', label='average likes/day with marker')
+    ax2.plot(x_axis, y_axis, linestyle='--', marker='o', color='purple', label='average likes/day with marker')
     for index in range(len(x_axis)):
-        ax.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=12)
+        ax2.text(x_axis[index], round(y_axis[index], 1), round(y_axis[index], 1), size=9)
 
 
     plt.savefig('./static/images/' + 'ratings' + '.png')
