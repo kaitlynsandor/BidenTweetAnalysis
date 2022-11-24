@@ -25,5 +25,6 @@ Tasks:
 1. Clone this repository: `git clone https://github.com/kaitlynsandor/BidenTweetAnalysis.git`
 2. Move into the app directory:  `cd BidenTweetAnalysis`    
 3. Install the module(s) listed in the requirements.txt file.  
+4. run python3 -m spacy download en
 4. In a terminal session, `pip install -r requirements.txt`
 5. Run the program: `python3 app.py`
