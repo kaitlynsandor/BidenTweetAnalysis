@@ -9,11 +9,70 @@
     <h2>Our Project</h2>
     <div class="container">
         <p>
-            **** Put Database Structure and Table Column Names Here ***
-        </p>   <br>
+            President Biden’s approval ratings have been quite low throughout his term, despite championing major legislative achievements, such as signing the Inflation Reduction Act or canceling $10,000 in student loans. In light of the recent 2022 midterm elections and continuous reporting about President Biden’s unpopularity among voters, we decided to analyze and display how the approval ratings of President Biden correlate with his Tweets (on Twitter) in relation to different political topics. For instance, we might notice that Biden’s tweets about canceling student debt may result in higher approval ratings, whereas discussions about inflation may result in lower approval ratings. We hope to display such information through various components, such as word clouds and graphs, on an interactive web application.         </p>
+
+    </div>
+</div>
+
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>
+
+<div class="mt-4 p-5 bg-light text-black rounded">
+    <h2>Database Structure</h2>
+    <div class="container">
+
         <p>
-            Born out of a project for a Yale University course on digital humanities, this website is designed as a user-friendly platform to explore some of the inscriptions found at the Dura-Europos site. All graffiti on the website were included in the second preliminary report from the Excavations at Dura Europos, an as-of-yet un-digitized archaeological report of findings from the Yale-French excavations at the sight from 1928-29. We’ve pulled graffiti from two sites within the city: those inside the walls of Tower 1, next to the Temple of the Palmyrene Gods, and from the Main Gate, also known as the Palmyrene Gate, to the city. We generally term the texts discussed on this website as “graffiti,” meaning words or pictures inscribed not in an official capacity and in public view, although we also freely call them “inscriptions.” This project is restricted to textual graffiti and graffiti in the Greek alphabet (the majority of the graffiti which is present at the Tower and Gate), so all drawings and inscriptions in other languages from Greek are not included. All translations were done by Grace Blaxill, an undergraduate at Yale and Jamie Flynn, a masters student in the History track at Yale. All website design and coding was performed by Kaitlyn Sandor, Lee Chen, and Jakub Bester, undergraduate students at Yale University.
+            1. 'tweets' has the following form
         </p>
+
+<table>
+    <tr>
+      <th>index</th>
+      <th>Unnamed</th>
+      <th>username</th>
+      <th>tweet_id</th>
+      <th>tweet_date</th>
+      <th>tweet_content</th>
+      <th>tweet_retweet_count</th>
+      <th>tweet_quote_count</th>
+      <th>tweet_reply_count</th>
+      <th>tweet_like_count</th>
+    </tr>
+  </table>
+
+  <br>
+        <p>
+            2. 'polling_data' has the following form
+        </p>
+<table>
+    <tr>
+        <th>index</th>
+        <th>Unnamed</th>
+        <th>startdate</th>
+
+        <th>pollster</th>
+        <th>samplesize</th>
+        <th>population</th>
+        <th>approve</th>
+        <th>disapprove</th>
+
+    </tr>
+    </table>
 
     </div>
 </div>
