@@ -4,6 +4,25 @@
     Analyzing Joe Biden Approval Rating in Relation to Tweets
 {% endblock %}
 {% block main %}
+
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>
+
 <div class="mt-4 p-5 bg-light text-black rounded">
     <div class="container">
         {% for key,value in form_data.items() %}
@@ -14,12 +33,21 @@
 
     <h2>This is the result of your query</h2>
 
+<table>
 
-    <ul>
-        {% for results in result %}
-            <p>{{results}}</p>
-        {% endfor %}
-    </ul>
+    {% for results in result %}
+
+        <tr>
+            <th>{{results}}}
+
+            </th>
+        </tr>
+    {% endfor %}
+
+
+    
+</table>
+
 
 
     </div>
